@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: poppins, sans-serif;
+    background-color: #f26522;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    height: 800px;
+}
+
+.background-image {
+    position: relative;
+    overflow: hidden;
+    height: 800px;
+    width: 500px;
+    background-image: url(files/emiliano-vittoriosi-3FSBkX4yG80-unsplash.jpg);
+    box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.438);
+    background-size: cover;
+    z-index: 1000;
+
+}
+
+svg {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: rgba(85, 53, 53, 0.555);
+}
+
+/* right side  */
+.form-wrapper {
+    background-color: #f26522;
+}
+
+.heading {
+    background-image: linear-gradient(to top, #f26522, #eb9c5a);
+    color: rgba(253, 230, 219, 255);
+    padding: 120px 0 50px 50px;
+}
+
+.heading>p,
+form>p {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+form>p {
+    font-size: 24px;
+}
+
+p:last-child {
+    margin-top: 20px;
+}
+
+.form {
+    position: relative;
+    padding: 20px 0 50px 50px;
+    background-color: #eb9c5a;
+    color: #494947;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.24);
+    z-index: 1;
+}
+
+.form>form>p {
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+.inputs {
+    line-height: 1em;
+    margin: 0 80px 30px 0;
+}
+
+
+label {
+    transform: scale(2em);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+}
+
+.inputs>input {
+    appearance: none;
+    width: 260px;
+    height: 35px;
+    font-size: 14px;
+    font-family: inherit;
+    padding: 2px 5px;
+    border-radius: 0.5em;
+    border: 1px solid gray;
+    background-color: #fdefe4;
+    box-shadow: inset 0px 0px 3px 0px#494947;
+}
+
+.btn {
+    background: #f95e05;
+    /* background-image: linear-gradient(to bottom, rgb(255, 200, 0)0%, rgb(255, 150, 0) 100%); */
+    background-image: linear-gradient(to bottom, rgb(255, 200, 0)0%, rgb(255, 150, 0) 50%, rgba(255, 255, 255, .18)75%, rgba(0, 0, 0, 0)100%);
+    border: none;
+
+    /* color: #494947; */
+    background-size: 200px calc(55px*2);
+    height: 55px;
+    width: 200px;
+    font-size: 20px;
+    border-radius: 0.3em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .4s ease;
+    color: #494947;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.212);
+
+}
+
+.btn:hover {
+
+    color: rgba(253, 230, 219, 255);
+    background-position: 0 100%;
+    color: #494947;
+    transition: all .4s ease;
+    color: rgba(253, 230, 219, 255);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+span {
+    font-weight: 500;
+    cursor: pointer;
+    color: #494947;
+}
+
+
+.input-wrapper input:focus {
+    border: 2px solid rgb(77, 77, 77);
+    outline: none;
+}
+
+.error>input {
+    background-color: rgb(255, 184, 184);
+}
+
+.correct>input {
+    background-color: rgb(186, 255, 186);
+}
+
+.require>label::after {
+    content: '*';
+    color: rgba(255, 0, 0, 0.678);
+}
+
+div.inputs {
+    position: relative;
+}
+
+.validation::after {
+    position: absolute;
+    /* content: 'Please enter a valid email'; */
+    /* content: 'Invalid password'; */
+    top: 55px;
+    /* top: 100px; */
+    left: 5px;
+    color: red;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+
+.email-validation::after {
+    content: 'Please enter a valid email';
+}
+
+.pw-validation::after {
+    content: 'Invalid password';
+}
+
+.cpw-validation::after {
+    content: "Passwords don't match";
+}
+
+
+input:disabled {
+    background-color: #d8ccc2b0;
+    border: 1px solid #8080806b;
+}
+
+.pw-hint>input {
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+.pw-hint::after {
+    content: 'Must be at least 8 characters long\AMust contain at least 1 number\AMust contain an uppercase letter\AMust contain a lowercase letter';
+    white-space: pre-wrap;
+    top: 52px;
+    left: 0;
+    width: 260px;
+    color: inherit;
+    height: 76px;
+    background-color: white;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background-color: #fdefe4;
+    /* overflow: hidden; */
+    border-radius: 0 0 0.5em 0.5em;
+}
